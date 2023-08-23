@@ -13,3 +13,8 @@ async def generate(request: Request):
         return {"text": output, "inference_time": str(inference_time)}
     except Exception as e:
         return {"error": str(e)}
+
+
+@app.get("/hc")
+async def health_check():
+    return "ok"
