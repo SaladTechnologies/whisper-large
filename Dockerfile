@@ -31,5 +31,7 @@ COPY web.py .
 COPY model.py .
 COPY Recording.wav .
 
+ENV HOST=::
+ENV PORT=1111
 
-CMD ["uvicorn", "web:app", "--port", "1111", "--host", "::"]
+CMD ["/bin/bash", "-c", "uvicorn web:app --host $HOST --port $PORT"]

@@ -32,5 +32,18 @@ docker build -t saladtechnologies/whisper-large:latest .
 To run the container, make sure you mount your GPU, and expose port 8888:
 
 ```bash
-docker run --gpus all -p 8888:8888 saladtechnologies/whisper-large:latest
+docker run \
+--gpus all \
+-p 1111:1111 \
+-e HOST="0.0.0.0" \
+saladtechnologies/whisper-large:latest
+```
+
+## Use The Container
+
+```bash
+curl  -X POST \
+  'http://localhost:1111/generate/' \
+  --header 'Content-Type: application/octet-stream' \
+  --data-binary '@/home/shawn/code/SaladTechnologies/whisper-large/Recording.wav'
 ```
