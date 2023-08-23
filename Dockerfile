@@ -29,6 +29,7 @@ RUN pip install -r requirements.txt
 
 COPY web.py .
 COPY model.py .
+COPY Recording.wav .
 
 
 CMD ["uvicorn", "web:app", "--port", "8888", "--host", "::"]
