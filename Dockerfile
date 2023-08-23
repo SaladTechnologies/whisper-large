@@ -32,4 +32,4 @@ COPY model.py .
 COPY Recording.wav .
 
 
-CMD ["uvicorn", "web:app", "--port", "8888", "--host", "::"]
+CMD ["uvicorn", "web:app", "--port", "1111", "--host", "::"]
